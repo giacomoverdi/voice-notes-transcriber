@@ -1,0 +1,181 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+activate_user.sql
+change_password.sql
+delete_user.sql
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker volumes
+postgres_data/
+redis_data/
+audio_uploads/
+
+# Temporary files
+tmp/
+temp/
+uploads/
+
+# Google Cloud credentials
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+.temp/
+.tmp/
+
+# Environment filesàà
+#.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+!.env.example
+!.env.production.example
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Docker volumes (local development)
+postgres_data/
+redis_data/
+audio_uploads/
+
+# Temporary files
+*.tmp
+*.temp
+/tmp
+.cache/
+
+# Audio uploads (local storage)
+backend/uploads/
+!backend/uploads/.gitkeep
+
+# SSL certificates
+docker/ssl/
+!docker/ssl/.gitkeep
+
+# Python cache (for any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Backup files
+*.backup
+*.bak
+backup/
+
+# Lock files (keep package-lock.json)
+yarn.lock
+pnpm-lock.yaml
+
+# PM2
+.pm2/
+ecosystem.config.js
+
+# Build artifacts
+*.pid
+*.seed
+*.pid.lock
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Desktop.ini
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Monitoring
+.monitoring/
+
+# Local development
+.local/
+
+# Ignore everything in docker/ except specific files
+docker/*
+!docker/nginx.conf
+!docker/nginx-frontend.conf
+!docker/nginx.prod.conf
+!docker/proxy_params
+!docker/.gitkeep

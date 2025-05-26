@@ -1,0 +1,15 @@
+{
+    "name": "voice-notes-transcriber",
+    "version": "1.0.0",
+    "description": "Voice Notes Transcriber & Organizer",
+    "scripts": {
+      "dev": "docker-compose up",
+      "build": "docker-compose build",
+      "start": "docker-compose up -d",
+      "stop": "docker-compose down",
+      "logs": "docker-compose logs -f",
+      "test": "cd backend && npm test && cd ../frontend && npm test"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }

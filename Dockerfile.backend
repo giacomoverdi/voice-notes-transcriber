@@ -1,0 +1,32 @@
+# Backend Dockerfile
+FROM node:18-alpine
+
+# Install ffmpeg for audio processing (includes ffprobe)
+RUN apk add --no-cache ffmpeg
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY backend/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy credentials
+COPY credentials/omissis-edito-dev-775ab3460106.json /app/credentials/
+
+# Copy application code
+COPY backend/ ./
+
+# Set environment variable for Google Cloud credentials
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/omissis-edito-dev-775ab3460106.json
+
+# Create uploads directory
+RUN mkdir -p uploads
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "server.js"]
