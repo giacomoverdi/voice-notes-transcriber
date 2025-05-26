@@ -78,6 +78,8 @@ Invia le tue note vocali all'indirizzo Postmark in entrata:
 3. Cerca, filtra e organizza le tue note
 4. Sincronizza con Notion (se configurato)
 
+**Importante:** Per visualizzare una nota, l'indirizzo email del mittente della nota vocale deve corrispondere all'indirizzo email dell'utente autenticato sulla piattaforma.
+
 ## 🏗️ Architettura
 
 ### Tech Stack
