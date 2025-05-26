@@ -31,7 +31,7 @@ Un sistema intelligente che trascrive automaticamente le note vocali inviate via
 
 ### 1. Clona il Repository
 ```bash
-git clone https://github.com/tuousername/voice-notes-transcriber.git
+git clone https://github.com/giacomoverdi/voice-notes-transcriber.git
 cd voice-notes-transcriber
 ```
 
@@ -218,7 +218,6 @@ docker-compose -f docker-compose.prod.yml up -d
 
 ### Cloud Deployment
 - **Google Cloud**: Deploy su Cloud Run o GKE
-- **AWS**: Usa ECS o EC2 con la configurazione Docker fornita
 - **Heroku**: Usa il deployment container
 - **DigitalOcean**: Deploy su App Platform
 
@@ -251,6 +250,5 @@ Questo progetto è distribuito con licenza MIT - vedi [LICENSE](LICENSE) per i d
 
 ## 📧 Contatti
 
-- **Email**: support@voicenotes.app
-- **GitHub**: [@giacomoverdi](https://github.com/tuousername)
-- **Demo**: [https://voicenotes.app](https://voicenotes.app)
+- **Email**: g.verdi@jugaad.digital
+- **GitHub**: [@giacomoverdi](https://github.com/giacomoverdi)
