@@ -91,7 +91,10 @@ class AudioController {
       // Transcribe audio
       const transcriptionResult = await transcriptionService.transcribeAudio(
         audioPath,
-        { language }
+        { 
+          language,
+          userEmail: userSettings.email // Pass user's email for language detection
+        }
       );
 
       // Generate summary and extract action items

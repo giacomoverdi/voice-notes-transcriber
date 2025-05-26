@@ -25,8 +25,16 @@ app.use(cors({
   credentials: true
 }));
 app.use(morgan('combined', { stream: logger.stream }));
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+// Aumenta il limite di dimensione del payload a 100MB
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+
+// Aumenta il timeout delle richieste a 10 minuti (600000ms)
+app.use((req, res, next) => {
+  req.setTimeout(600000);
+  res.setTimeout(600000);
+  next();
+});
 
 // Rate limiting
 app.use('/api/', rateLimiter);

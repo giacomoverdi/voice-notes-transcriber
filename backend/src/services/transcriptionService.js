@@ -43,15 +43,22 @@ class TranscriptionService {
   }
 
   /**
-   * Get user's preferred language
+   * Get user's preferred language by userId or email
    */
-  async getUserLanguage(userId) {
+  async getUserLanguage(userId, email) {
     try {
-      if (!userId) {
-        logger.warn('No userId provided, using default language');
+      if (!userId && !email) {
+        logger.warn('No userId or email provided, using default language');
         return 'it-IT';
       }
-      const user = await User.findById(userId);
+      
+      let user;
+      if (userId) {
+        user = await User.findById(userId);
+      } else if (email) {
+        user = await User.findOne({ where: { email } });
+      }
+      
       return user?.settings?.language || 'it-IT';
     } catch (error) {
       logger.error('Error getting user language:', error);
@@ -110,8 +117,8 @@ class TranscriptionService {
    */
   async transcribeAudio(audioPath, options = {}) {
     try {
-      const { userId } = options;
-      const language = await this.getUserLanguage(userId);
+      const { userId, userEmail } = options;
+      const language = await this.getUserLanguage(userId, userEmail);
 
       // Test connection first
       const isConnected = await this.testConnection();
